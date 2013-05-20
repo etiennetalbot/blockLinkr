@@ -13,14 +13,13 @@ jQuery.blockLinkr = (element, settings) ->
   
   jQuery.extend config, settings if settings
   
-  _this =             this
   element =           jQuery element
   targetURL =         ''              #The URL to point to
   targetWindow =      ''              #The link needs to open in which window
   doubleLinkingFlag = false           #Flag to determine if a link was clicked
   
   # initialize the plugin
-  _this.init = ->
+  init = ->
     element.find('a').on 'mouseup', preventDoubleLinking
     elementStyling()
     getHrefTarget()
@@ -74,12 +73,12 @@ jQuery.blockLinkr = (element, settings) ->
     return
   
 
-  _this.init()
+  init()
   
   return this
 
 jQuery.fn.blockLinkr = (options) ->
-  this.each( ->
+  @each( ->
     if jQuery(this).data('blockLinkr') is undefined
       plugin = new jQuery.blockLinkr this, options
       jQuery(this).data 'blockLinkr', plugin

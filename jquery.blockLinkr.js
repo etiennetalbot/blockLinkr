@@ -2,7 +2,7 @@
 (function() {
 
   jQuery.blockLinkr = function(element, settings) {
-    var config, doubleLinkingFlag, elementStyling, getHrefTarget, preventDoubleLinking, setLink, targetURL, targetWindow, _this;
+    var config, doubleLinkingFlag, elementStyling, getHrefTarget, init, preventDoubleLinking, setLink, targetURL, targetWindow;
     config = {
       linkTarget: '',
       pointerCursor: true
@@ -10,12 +10,11 @@
     if (settings) {
       jQuery.extend(config, settings);
     }
-    _this = this;
     element = jQuery(element);
     targetURL = '';
     targetWindow = '';
     doubleLinkingFlag = false;
-    _this.init = function() {
+    init = function() {
       element.find('a').on('mouseup', preventDoubleLinking);
       elementStyling();
       getHrefTarget();
@@ -61,7 +60,7 @@
         doubleLinkingFlag = false;
       }
     };
-    _this.init();
+    init();
     return this;
   };
 
