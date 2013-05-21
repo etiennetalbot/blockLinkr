@@ -6,10 +6,9 @@
 jQuery.blockLinkr = (element, settings) ->
   
   # default config values
-  config = {
+  config =
     linkTarget:    ''   # (OPTIONAL) Selector to the <a> tag that points to the desired url (if not set, the first encountered in the blockLinkr element will be used)
     pointerCursor: true # By default adds "cursor: pointer" to the CSS styling of the element if the cursor isn't already styled (different than "auto")
-  }
   
   jQuery.extend config, settings if settings
   
