@@ -1,6 +1,6 @@
 # blockLinkr jQuery Plugin
 # A plugin for turning blocks of content into clickable links
-# version 1.0, May 19th, 2013
+# version 1.0.1, June 26th, 2013
 # by Etienne Talbot
 
 jQuery.blockLinkr = (element, settings) ->
@@ -19,7 +19,7 @@ jQuery.blockLinkr = (element, settings) ->
   
   # initialize the plugin
   init = ->
-    element.find('a').on 'mouseup', preventDoubleLinking
+    element.find('a').on 'mouseup.blockLinkr', preventDoubleLinking
     elementStyling()
     getHrefTarget()
     

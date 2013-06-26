@@ -15,7 +15,7 @@
     targetWindow = '';
     doubleLinkingFlag = false;
     init = function() {
-      element.find('a').on('mouseup', preventDoubleLinking);
+      element.find('a').on('mouseup.blockLinkr', preventDoubleLinking);
       elementStyling();
       getHrefTarget();
     };
